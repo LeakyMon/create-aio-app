@@ -1,24 +1,55 @@
-# Create aio app
+# Create Aio App
 
-
-[![Build Status](https://travis-ci.com/aio-libs/create-aio-app.svg?branch=master)](https://travis-ci.com/aio-libs/create-aio-app)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Gitter chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aio-libs/Lobby)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/aio-libs/create-aio-app/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+[![Build Status](https://travis-ci.com/aio-libs/create-aio-app.svg?branch=master)](https://travis-ci.com/aio-libs/create-aio-app)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)  
+[![Gitter chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aio-libs/Lobby)  
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/aio-libs/create-aio-app/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)  
 [![PyPI version](https://badge.fury.io/py/create-aio-app.svg)](https://badge.fury.io/py/create-aio-app)
 
-The tool that lets you bootstrap aiohttp application with best practices ready for development.
+The tool that lets you bootstrap aiohttp applications with best practices ready for development.
 
-**Here is a screenshot of our interfaces**
+## Screenshot of Interface
 ![Example](https://raw.githubusercontent.com/aio-libs/create-aio-app/master/assets/assets.png)
+
+## Table of Contents
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Salient Features](#salient-features)
+4. [Options](#options)
+5. [Troubleshooting](#troubleshooting)
+6. [Contributing](#contributing)
+7. [License](#license)
 
 ## Installation
 
-Requires python3.6 - python3.7 and docker-compose
+### Requirements
 
-```bash
-pip install create-aio-app
-```
+- Python 3.6+
+- Docker (optional, for deployment)
+- Docker Compose
+
+### Verify Installation
+To ensure Python and Docker are installed, run:
+    ```bash
+    python --version
+    docker --version
+    ```
+
+### Install Python
+
+Ensure Python 3.6 or higher is installed:
+
+- **Windows**: Download Python from [here](https://www.python.org/downloads/) and check "Add Python to PATH" during installation.
+- **macOS**: Install Python using Homebrew:
+  ```bash
+  brew install python
+
+- **Linux**: Use your package manager to install Python
+    ```bash
+    sudo apt-get update
+    sudo apt-get install python3
+    ```
+
 
 ## Usage
 
@@ -43,8 +74,12 @@ make run # start your project
 
 [Here is a link to all the make commands.](https://create-aio-app.readthedocs.io/pages/commands.html)
 
+## Real-World Example Use Case
 
-Then, navigate in your browser to `http://localhost:8080/`
+An example case for this program is to setup a basic API server in aiohttp responsible for handling async web requests.
+The setup will include all the necesities to start your async API efficiently with the best built in practices.
+
+Now, navigate in your browser to `http://localhost:8080/`
 
 ## Salient Features
 
@@ -70,6 +105,23 @@ Then, navigate in your browser to `http://localhost:8080/`
 `--redis` - add redis to the template
 
 `--uvloop` - uvloop event loop for aiohttp
+
+## Troubleshooting
+Common Issues
+
+- Issue: "ModuleNotFoundError: No module named 'aiohttp'"
+    - You must ensure that you have activated the virtual environment (venv) and installed ALL the required dependencies. If the problem continues, opt to run the following
+    ```bash 
+    source venv/bin/activate 
+    pip install -r requirements.txt
+    ```
+
+- Docker Error: "Permission Denied"
+    - Ensure Docker is running and that you have the correct permissions. On Linux, add your user to the Docker group:
+    ```bash 
+    sudo usermod -aG docker $USER
+    ```
+    - MUST RESTART TERMINAL BEFORE TRYING AGAIN!
 
 ## Contributing
 
